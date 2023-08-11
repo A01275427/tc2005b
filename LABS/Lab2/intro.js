@@ -59,7 +59,33 @@ vamonos();
 
 
 // funciones modernas
+const funcion_anonima = () => {
+    console.log("Esto es una función anónima");
+}
 
+funcion_anonima();
+
+//html dinámico con eventos
+const oppenheimer = document.getElementById("Oppenheimer");
+
+console.log(oppenheimer);
+
+const despliega_rating = () => {
+    const rating ="10/10 ¡Excelente!";
+    oppenheimer.innerHTML = rating;
+    oppenheimer.onclick = despliega_nombre;
+}
+
+const despliega_nombre = () => {
+    const nombre = "Oppenheimer";
+    oppenheimer.innerHTML = nombre;
+    oppenheimer.onclick = despliega_rating;
+}
+
+oppenheimer.onclick = () => {
+    console.log("Hiciste click en Oppenheimer");
+    despliega_rating();
+}
 
 
 
@@ -144,4 +170,3 @@ vamonos();
 
 
 
-//html dinámico con eventos
