@@ -88,85 +88,48 @@ oppenheimer.onclick = () => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //arreglos
 
-//const arreglo = ["Elemento"];
+const arreglo = ["Elemento"];
 
+arreglo.push("Otro elemento");
 
-
-
-
-
-
-
-
-
-
-
-
-
-//arreglo.push("Otro elemento");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//arreglo[10] = "Uno más";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+arreglo[10] = "Uno más";
 
 //arreglos asociativos
+arreglo["Once"] = "Otro mas"
 
+//recorrido tradicional del arreglo
+for (let i = 0; i < arreglo.length; i++){
+    console.log(arreglo[i]);
+}
 
+//recorridos alternativos del arreglo
+for (let posicion in arreglo){
+    console.log(posicion)
+}
 
+for(let valor of arreglo){
+    console.log(valor)
+}
 
+//Objetos(json: javascript object notation)
+const objeto = {
+    atributo_1: "valor_1",
+    atributo_2: "valor_2",
+    atributo_3: "valor_3"
+}
 
+console.log(objeto);
+console.log(objeto.atributo_1);
 
+for(let posicion in objeto){
+    console.log(posicion);
+}
 
+function ejercicio_1(){
+    //Ejercicio del laboratorio
+    //...
 
-
-
-
-
-
-
-
-
+    document.getElementById("ejercicio_1").innerHTML = "Restpuesta del ejercicio 1"
+}
