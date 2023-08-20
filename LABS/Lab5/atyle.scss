@@ -1,0 +1,12 @@
+// Importar Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// Personalizar estilos
+body {
+    background-color: #f8f9fa; // Cambiar el color de fondo
+}
+
+.custom-btn {
+    @extend .btn; // Extender un estilo de Bootstrap
+    background-color: #FF5733; // Personalizar el color de fondo
+}

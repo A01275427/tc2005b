@@ -1,39 +1,11 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
-
-body{
-    margin: 0 auto;
-    max-width: 50em;
-    font-family: "Helvetica", "Arial", sans-serif;
-    line-height: 1.5;
-    padding: 4em 1em;
-    color: #555;
-}
-
-h2,
-h3,
-h4,
-h5,
-strong{
-    color:blue;
-}
-
-h1{
-    color:crimson;
-}
-
-td{
-    color:darkgreen;
-}
-
-.gustan{
-    text-decoration: line-through;
-    color:red;
-}
-
-#TEC{
-    color:red;
-}
-
-#TEC:hover{
-    color:yellowgreen;
-}
+body {
+    --bs-body-font-family: var(--bs-font-monospace);
+    --bs-body-line-height: 1.4;
+    --bs-body-bg: var(--bs-gray-100);
+  }
+  
+  .table {
+    --bs-table-color: var(--bs-gray-600);
+    --bs-table-bg: var(--bs-gray-100);
+    --bs-table-border-color: transparent;
+  }
