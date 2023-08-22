@@ -36,188 +36,80 @@ const server = http.createServer( (request, response) => {
 
         response.setHeader('Content-Type', 'text/html');
         response.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <title>Películas</title>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-        </head>
-        <body>
-            <header>
-                <nav class="navbar" role="navigation" aria-label="main navigation">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="https://bulma.io">
-                            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
-                        </a>
-                    
-                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <section class="section">
-                    <div class="container">
-                        <h1 class="title">Películas</h1>
-                        <p>
-                            <em>Cuando</em> <b>nosotros</b> <i>escribimos</i>  sobre <strong>películas</strong>
-                        </p>
-                        <br>
-                        <p>
-                            <label for="favorita">¿Cuál es tu película favorita?</label>
-                            <input id="favorita" class="input is-primary" type="text" placeholder="Oppenheimer">
-                        </p>
-                        <br>
-                        <h2 class="subtitle">En cartelera</h2>
-                        <button id="boton_cartelera" class="button is-info is-rounded">Ver cartelera</button>
-        
-                        <div id="posters"></div>
-        
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td id="Oppenheimer">Oppenheimer</td>
-                                </tr>
-                                <tr>
-                                    <td style="color:pink">Barbie</td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th>Película</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <td>Fecha: 10 de agosto de 2023</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-        
-                        <h3 class="subtitle">Mis favoritas</h3>
-                        <ol class="favorito">
-                            <li>Lobo de Wallstreet</li>
-                            <li>Django</li>
-                            <li>Madagascar</li>
-                        </ol>
-        
-                        <div id="ejercicio_1"></div>
-        
-                        <button id="boton_cartelera" class="button is-danger is-rounded">Botón en rama</button>
-        
-                    </div>
-                </section>
-            </main>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arturo Sanchez Rodriguez, estudiante en el Tecnológico de Monterrey</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <style>
+        /* Tu estilo personalizado aquí */
+        body {
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="lab3.css">
+</head>
+<body>
+    <header>
+        <h1>Arturo Sánchez Rodríguez, estudiante en el Tecnológico de Monterrey</h1>
+    </header>
+    <main class="section">
+        <div class="container">
+            <h2 class="title">Carrera ITC:</h2>
+            <p>
+                La carrera de ingeniería de tecnologías computacionales es una carrera del modelo Tec21, en la cual aprendemos a ser programadores y enfrentarnos con retos que nos preparan para la vida profesional.
+            </p>
+            <h3 class="subtitle">Materiales que ocupamos:</h3>
+            <ul>
+                <li>Computadora</li>
+                <li>Programa para programar</li>
+                <li>Ordenador</li>
+                <li>Github</li>
+                <li>ETC</li>
+            </ul>
+            <h4 class="title">Materias que más me gustan:</h4>
+            <ol class="gustan">
+                <li>Matemáticas</li>
+                <li>Programación</li>
+                <li>Idiomas</li>
+            </ol>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><h5 class="title">Escuelas:</h5></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="TEC">TEC</td>
+                    </tr>
+                </tbody>
+            </table>
             <footer>
-        
+                <td style="color: yellow">Fecha: 13 de Agosto del 2023</td>
             </footer>
-            </body>
-            </html>
-        `);
+        </div>
+    </main>
+</body>
+</html>`);
 
         response.end();
 
-    } else if(request.url == "/new" && request.method == "GET") {
-        
-        response.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <title>Películas</title>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-        </head>
-        <body>
-            <header>
-                <nav class="navbar" role="navigation" aria-label="main navigation">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="https://bulma.io">
-                            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
-                        </a>
-                    
-                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <section class="section">
-                    <div class="container">
-                        <h1 class="title">Registro de películas</h1>
-                        <form action="/new" method="POST">
-                            <label for="nombre">Nombre de la película</label>
-                            <input id="nombre" name="nombre" class="input" type="text" placeholder="Oppenheimer">
-                            <br><br>
-                            <label for="sinapsis">Sinapsis de la película</label>
-                            <textarea id="sinapsis" name="sinapsis" class="textarea" placeholder="La historia de la bomba atómica"></textarea>
-                            <br>
-                            <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
-                        </form>
-                    </div>
-                </section>
-            </main>
-            </body>
-            </html>
-        `);
-
-        response.end();
-
-    } else if(request.url == "/new" && request.method == "POST") { 
-        
-        response.write(`La película fue registrada`);
-        response.end();
-
-    } else {
-        response.statusCode = 404;
-
-        response.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <title>Películas</title>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-        </head>
-        <body>
-            <header>
-                <nav class="navbar" role="navigation" aria-label="main navigation">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="https://bulma.io">
-                            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
-                        </a>
-                    
-                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <section class="section">
-                    <div class="container">
-                        <h1 class="title">Tu película no se encontró</h1>
-                    </div>
-                </section>
-            </main>
-            </body>
-            </html>
-        `);
-
-        response.end();
+    } 
+    
+    else if(request.url == "/titulo" && request.method == "POST") { 
+        response.write(``)
     }
+    
+    
 
+    else if(request.url == "/ola" && request.method == "GET") {
+        
+        response.write(404);
+
+        response.end();
+
+    }
 
     /*
     const datos = [];

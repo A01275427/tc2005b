@@ -21,36 +21,29 @@ document.write();
 //Salida: La página debe indicar si el resultado fue correcto o incorrecto, y el tiempo que tardó el 
 //usuario en escribir la respuesta. 
 
-document.write("Ejercicio 2 <br></br>");
+document.write("<br></br> Ejercicio 2 <br></br>");
 
-let rannum1 = Math.floor(Math.random()*999);
-
-let rannum2 = Math.floor(Math.random()*999);
-
-let ransuma = parseInt(rannum1) + parseInt(rannum2);
-
-document.write(ransuma);
-
-let tiempo = new tiempo();
-
-console.log(tiempo)
+var rannum1 = Math.floor(Math.random()*10);
+var rannum2 = Math.floor(Math.random()*10);
+let suma = rannum1 + rannum2;
+document.write(suma);
 
 //Ejercicio3.-
 //Función: contador. Parámetros: Un arreglo de números. Regresa: La cantidad de números negativos en el 
 //arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.
 
-document.write("Ejercicio 3 <br></br>");
+document.write("<br></br> Ejercicio 3 <br></br>");
 
 //Ejercicio4.-
 //Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo con los promedios 
 //de cada uno de los renglones de la matriz.
 
-document.write("Ejercicio 4 <br></br>");
+document.write("<br></br> Ejercicio 4 <br></br>");
 
 //Ejercicio5.-
 //Función: inverso. Parámetros: Un número. Regresa: El número con sus dígitos en orden inverso.
 
-document.write("Ejercicio 5 <br></br>")
+document.write("<br></br> Ejercicio 5 <br></br>")
 
 //Ejercicio6.-
 //Crea una solución para un problema de tu elección (puede ser algo relacionado con tus intereses, 

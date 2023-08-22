@@ -1,0 +1,15 @@
+{
+  "name": "tc2005b",
+  "version": "1.0.0",
+  "description": "Proyecto del curso tc2005b",
+  "main": "lab11.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "tc2005b"
+  ],
+  "author": "Arturo Sánchez",
+  "license": "MIT"
+}
