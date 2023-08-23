@@ -2,18 +2,22 @@ alert("Ya lo logre profe LOL");
 
 console.error("Este es un mensaje de error");
 
-const nombre = prompt("Como te llamas?");
+/*const nombre = prompt("Como te llamas?");
 console.log("Hola " + nombre);
 
-console.assert();
+console.assert();*/
+
 
 //Ejercicio1.- Entrada: un número pedido con un prompt. 
 //Salida: Una tabla con los números del 1 al número dado con sus cuadrados y cubos. 
 //Utiliza document.write para producir la salida 
 
 document.write("Ejercicio 1 <br></br>");
-let num1 = prompt("Escribe un número");
-document.write();
+
+var numero = parseInt(prompt("Ingresa un número QUE SEA UN NUMERO NORMAAAAALLL"));
+
+let tabla = `<table>`;
+
 
 
 //Ejercicio2.-
@@ -24,15 +28,39 @@ document.write();
 document.write("<br></br> Ejercicio 2 <br></br>");
 
 var rannum1 = Math.floor(Math.random()*10);
+
 var rannum2 = Math.floor(Math.random()*10);
-let suma = rannum1 + rannum2;
-document.write(suma);
+
+var suma = rannum1 + rannum2;
+
+var tiempoInicio = new Date();
+
+var numUsuario = parseInt(prompt("Ingrese la suma de " + rannum1 + " y " + rannum2));
+
+var tiempoFin = new Date();
+
+var tiempoTotal = (tiempoFin - tiempoInicio) / 1000;
+
+var correcto = numUsuario === suma;
+
+document.write("<p>Tu respuesta fue: " + (correcto ? "SIUUUUUU" : "NEL PASTEL") + "</p>");
+
+document.write("<p>Tiempo que tardaste amiko: " + tiempoTotal + " segundos</p>");
 
 //Ejercicio3.-
 //Función: contador. Parámetros: Un arreglo de números. Regresa: La cantidad de números negativos en el 
 //arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.
 
 document.write("<br></br> Ejercicio 3 <br></br>");
+
+array = [1, 6, 7, 4, 9, 6, 8, 7, 11, 45, 66];
+
+array.sort();
+
+document.write(array);
+
+// Imprimir el arreglo ingresado por el usuario en la consola
+console.log("Aqui ta tu arreglo jejeje:", array);
 
 //Ejercicio4.-
 //Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo con los promedios 
