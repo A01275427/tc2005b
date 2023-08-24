@@ -14,7 +14,25 @@ console.assert();*/
 
 document.write("Ejercicio 1 <br></br>");
 
-var numero = parseInt(prompt("Ingresa un número QUE SEA UN NUMERO NORMAAAAALLL"));
+var numero = parseInt(prompt("Ingresa un número QUE SEA UN NUMERO NORMAAAAALLL xfa"));
+
+if(!isNaN(numero)){
+    document.write("<style>");
+    document.write("table { border-collapse: collapse; width: 100%; }");
+    document.write("th, td { border: 1px solid black; padding: 8px; text-align: center; }");
+    document.write("</style>");
+    document.write("<table>");
+    document.write("<tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>");
+
+    for(var i = 1; i<= numero; i++){
+        var cuad = i*i;
+        var cub = i*i*i;
+        document.write("<tr><td>" + i + "</td><td>" + cuad + "</tr><td>" + cub + "</td></tr>");
+    }
+    document.write("</table>");
+}else{
+    document.write("No fue válido tu número mijit@");
+}
 
 let tabla = `<table>`;
 
@@ -43,7 +61,7 @@ var tiempoTotal = (tiempoFin - tiempoInicio) / 1000;
 
 var correcto = numUsuario === suma;
 
-document.write("<p>Tu respuesta fue: " + (correcto ? "SIUUUUUU" : "NEL PASTEL") + "</p>");
+document.write("<p>Tu respuesta fue: " + (correcto ? "SIUUUUUU (Correcto)" : "NEL PASTEL") + "</p>");
 
 document.write("<p>Tiempo que tardaste amiko: " + tiempoTotal + " segundos</p>");
 
