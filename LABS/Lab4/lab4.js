@@ -111,10 +111,36 @@ document.write("<br></br> Números mayores a cero: " + resultado.cantidadNumeroP
 
 document.write("<br></br> Ejercicio 4 <br></br>");
 
+const arreglo = [45, 56,-10, 3, 9, 10, 72, -29];
+
+arreglo.sort(function(a, b){return a - b});
+
+document.write(arreglo);
+
 //Ejercicio5.-
 //Función: inverso. Parámetros: Un número. Regresa: El número con sus dígitos en orden inverso.
 
 document.write("<br></br> Ejercicio 5 <br></br>")
+
+const invertirNum = numero =>{
+    const numInvertido = numero.toString().split("").reverse().join("");
+    return numInvertido;
+}
+
+document.write(invertirNum);
+
+/*
+const numero = 559742;
+
+function invertirNum(){
+    var separarNum = numero.split("");
+    var invertirNum = numero.inverse("");
+    var unirNum = numero.join("");
+    return unirNum;
+}
+
+document.write(invertirNum);
+*/
 
 //Ejercicio6.-
 //Crea una solución para un problema de tu elección (puede ser algo relacionado con tus intereses, 
@@ -123,3 +149,4 @@ document.write("<br></br> Ejercicio 5 <br></br>")
 //y la solución implementada en JavaScript, utilizando al menos la creación de un objeto, el objeto además 
 //de su constructor deben tener al menos 2 métodos. Muestra los resultados en el documento HTML.
 
+document.write("<br></br> Ejercicio 6 <br></br>")
