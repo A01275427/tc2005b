@@ -71,14 +71,39 @@ document.write("<p>Tiempo que tardaste amiko: " + tiempoTotal + " segundos</p>")
 
 document.write("<br></br> Ejercicio 3 <br></br>");
 
-array = [1, 6, 7, 4, 9, 6, 8, 7, 11, 45, 66];
+const array = [1, 6, 7, 4, 9, 6, 8, 7, 11, 0, -19, 5, 45, -66];
 
-array.sort();
+array.sort((a, b) => a - b);
 
 document.write(array);
 
-// Imprimir el arreglo ingresado por el usuario en la consola
-console.log("Aqui ta tu arreglo jejeje:", array);
+function contador(arr) {
+    let numeroNeg = 0;
+    let ceros = 0;
+    let numeroPos = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            numeroNeg++;
+        } else if (arr[i] === 0) {
+            ceros++;
+        } else {
+            numeroPos++;
+        }
+    }
+
+    return {
+        cantidadNegativos: numeroNeg,
+        cantidadCeros: ceros,
+        cantidadNumeroPos: numeroPos
+    };
+}
+
+const resultado = contador(array);
+
+document.write("<br></br> Números negativos: " + resultado.cantidadNegativos);
+document.write("<br></br> Cantidad de ceros: " + resultado.cantidadCeros);
+document.write("<br></br> Números mayores a cero: " + resultado.cantidadNumeroPos);
 
 //Ejercicio4.-
 //Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo con los promedios 
