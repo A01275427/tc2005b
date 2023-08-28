@@ -122,25 +122,14 @@ document.write(arreglo);
 
 document.write("<br></br> Ejercicio 5 <br></br>")
 
-const invertirNum = numero =>{
-    const numInvertido = numero.toString().split("").reverse().join("");
-    return numInvertido;
+let numeroInv = 987654321;
+
+function invertirNum(inputNumero){
+    let numInvertido = Number(numero.toString().split('').reverse().join(''));
+    document.write(numInvertido);
 }
 
-document.write(invertirNum);
-
-/*
-const numero = 559742;
-
-function invertirNum(){
-    var separarNum = numero.split("");
-    var invertirNum = numero.inverse("");
-    var unirNum = numero.join("");
-    return unirNum;
-}
-
-document.write(invertirNum);
-*/
+console.log(invertirNum(numeroInv));
 
 //Ejercicio6.-
 //Crea una solución para un problema de tu elección (puede ser algo relacionado con tus intereses, 
@@ -150,3 +139,22 @@ document.write(invertirNum);
 //de su constructor deben tener al menos 2 métodos. Muestra los resultados en el documento HTML.
 
 document.write("<br></br> Ejercicio 6 <br></br>")
+
+class Circulo {
+    constructor(diametro) {
+    this.diametro = diametro;
+    this.radio = diametro / 2;
+    this.area = Math.PI * Math.pow(this.radio, 2);
+}
+
+imprimirDatos() {
+    document.write("Datos del círculo:<br></br>");
+    document.write("Diámetro: " + this.diametro + "<br></br>");
+    document.write("Radio: " + this.radio+ "<br></br>");
+    document.write("Área: " + this.area+ "<br></br>");
+}
+}
+
+var diametro = parseFloat(prompt("Ingresa el diámetro del círculo:"));
+var miCirculo = new Circulo(diametro);
+miCirculo.imprimirDatos();
