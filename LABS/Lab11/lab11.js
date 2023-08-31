@@ -133,7 +133,7 @@ app.get('/new', (request, response, next) => {
     response.send(html);
 });
 
-app.post('/new', (request, response, next) => {
+app.post('/lab', (request, response, next) => {
     console.log(request.body);
     response.send();
 })

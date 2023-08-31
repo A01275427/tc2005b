@@ -2,10 +2,10 @@
   "name": "tc2005b",
   "version": "1.0.0",
   "description": "Proyecto del curso tc2005b",
-  "main": "app.js",
+  "main": "Labs/Lab11/lab11.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon"
   },
   "keywords": [
     "express",
