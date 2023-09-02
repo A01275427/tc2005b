@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laboratorio 11</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="lab11.css"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <header>
@@ -16,34 +16,36 @@
                 </a>
             </div>
         </nav>
+    </header>
+    <main>
         <section class="section">
             <div class="container">
                 <h1 class="title">Laboratorio 11: Express</h1>
                 <p class="subtitle">Arturo Sánchez Rodríguez - A01275427</p>
             </div>
         </section>
-    </header>
-    <main>
-        <section>
+        <section class="section">
             <div class="container">
-                <h1 class="title"><strong>Aprendizajes</strong></h1>
-                <ul>
-                    <li><button class="button">HTML</button></li>
-                    <li><button class="button">JavaScript</button></li>
-                    <li><button class="button">Git</button></li>
-                    <li><button class="button">Terminal</button></li>
+                <h2 class="title is-4">Aprendizajes</h2>
+                <ul class="buttons">
+                    <li><button class="button is-primary">HTML</button></li>
+                    <li><button class="button is-primary">JavaScript</button></li>
+                    <li><button class="button is-primary">Git</button></li>
+                    <li><button class="button is-primary">Terminal</button></li>
                 </ul>
-
-                <div id="DatosPersonales"></div>
-
-                <table>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h2 class="title is-4">Datos Personales</h2>
+                <table class="table">
                     <caption>Datos Personales</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Fecha Nacimiento</th>
-                            <th scope="col">Edad</th>
-                            <th scope="col">Carrera</th>
+                            <th>Nombre</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Edad</th>
+                            <th>Carrera</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,3 +62,4 @@
     </main>
 </body>
 </html>
+

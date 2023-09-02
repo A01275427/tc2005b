@@ -83,7 +83,7 @@ app.use((request, response, next) => {
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-app.get('/new', (request, response, next) => {
+app.get('/peliculas', (request, response, next) => {
 
     const html = `
     <!DOCTYPE html>
@@ -133,8 +133,52 @@ app.get('/new', (request, response, next) => {
     response.send(html);
 });
 
-app.post('/lab', (request, response, next) => {
-    console.log(request.body);
+app.get('/ola', (request, response, next) => {
+    const html = `
+    <main>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Laboratorio 11: Express</h1>
+            <p class="subtitle">Arturo Sánchez Rodríguez - A01275427</p>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-4">Aprendizajes</h2>
+            <ul class="buttons">
+                <li><button class="button is-primary">HTML</button></li>
+                <li><button class="button is-primary">JavaScript</button></li>
+                <li><button class="button is-primary">Git</button></li>
+                <li><button class="button is-primary">Terminal</button></li>
+            </ul>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-4">Datos Personales</h2>
+            <table class="table">
+                <caption>Datos Personales</caption>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Edad</th>
+                        <th>Carrera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arturo</td>
+                        <td>27/08/2002</td>
+                        <td>20</td>
+                        <td>ITC</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+`
     response.send();
 })
 
