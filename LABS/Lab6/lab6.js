@@ -1,42 +1,109 @@
-/*console.log("hola desde node!");
+const express = require('express');
+const app = express();
 
-//fs es el módulo de filesystem de node, 
-//que sirve para acceder a los métodos para manipular el sistema de archivos
-const filesystem = require('fs');
+const bodyParser = require('body-parser');
 
-//writeFileSync es un método que sirve para escribir en un archivo de manera síncrona.
-//Por default, los métodos de node son asíncronos.
-filesystem.writeFileSync('hola.txt', 'Hola desde node');
+app.use
 
-console.log("Ya acabé de escribir el archivo");
 
-//Imprime a los 7 segundos un mensaje
-setTimeout( () => { 
-        console.log("Ya te hackié jojojo"); 
-    }, 7000);
+document.getElementById("Nombre").onkeyup = () => {
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
 
-//El siguiente código imprime de manera asíncrona el arreglo ordenado
-const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
+    document.getElementById("Nombre").style.color = `rgb(${red}, ${green}, ${blue})`
+}
 
-for (let item of arreglo) {
-    setTimeout(() => {
-        console.log(item);
-    }, item);
-} 
+ejercicio_1(); // Llama a la función después de asignar el evento onkeyup.
 
-//El módulo http contiene las funciones para 
-//recibir peticiones HTTP y enviar respuestas de HTTP
-const http = require('http');
+
+let equipo = [
+    {
+        agarre:"Anatomico",
+        imagen:"https://http2.mlstatic.com/D_NQ_NP_958731-MLA48578386701_122021-O.webp",
+        descripcion:"Se adaptan a la mano en forma por por lo que están aconsejados para personas con manos grandes a las que les gusta sentir que usan toda la superficie de la pala."
+    },
+    {
+        agarre:"Recto",
+        imagen:"https://http2.mlstatic.com/D_Q_NP_655478-MLA48578011679_122021-O.webp",
+        descripcion:"Son más anchos por el extremo del mango y más estrechos en la conexión con la cabeza de la pala. Una forma diseñada para evitar que la pala se resbale de las manos. En este tipo existen algunos modelos que varían la anchura del mango, por lo que se puede conseguir un agarre casi perfecto."
+    },
+    {
+        agarre:"Concavo",
+        imagen:"https://http2.mlstatic.com/D_NQ_NP_953046-CBT68938758100_042023-O.webp",
+        descripcion:"Se adaptan a la mano en forma por por lo que están aconsejados para personas con manos grandes a las que les gusta sentir que usan toda la superficie de la pala."
+    }
+]
+/*
+function generaCatalogo(){
+    let html =`<div class="columns">`;
+
+    for(let equipo of equipos){
+        html += 
+            `<div class="column">
+                <figure class="image">
+                    <img class="is-rounded" src="${equipo.imagen}">
+                </figure>
+            </div>`;
+    }
+    html += `</div>`;
+    document.getElementById("equipo").innerHTML = html;
+}
+generaCatalogo();
 */
 
-const server = http.createServer( (request, response) => {    
-    console.log(request.url);
+function generaCatalogo(){
+    let html =`<div class="columns">`;
 
-    if (request.url == "/") {
+    for(let equipo of equipos){
+        html += 
+            `<div class="column">
+            <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="${equipo.imagen}" alt="${equipo.agarre}">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-left">
+                    <figure class="image is-48x48">
+                        <img src="${equipo.imagen}" alt="${equipo.agarre}">
+                    </figure>
+                    </div>
+                    <div class="media-content">
+                    <p class="title is-4">${equipo.agarre}</p>
+                    </div>
+                </div>
+            
+                <div class="content">
+                    ${equipo.descripcion}
+                    <br>
+                    <button class="button is-danger is-rounded" onclick=quitar("${equipo.agarre}")>Quitar</button>
+                </div>
+            </div>
+        </div>
+    </div>`;
+}
+}
 
-        response.setHeader('Content-Type', 'text/html');
-        response.write(`
-<<!DOCTYPE html>
+function quitar(equipo){
+    let nuevoAgarre = new Array();
+    for(let agarre of agarre) {
+        if (equipo.agarre != agarre) {
+            nuevoAgarre.push(equipo);
+        }
+    }
+    equipo = nuevoAgarre;
+    genera_posters();
+}
+document.getElementById("boton_imagen").onclick = genera_posters;
+
+
+
+app.get('/',(request, response, next) => {
+    const html =` 
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
@@ -183,63 +250,8 @@ const server = http.createServer( (request, response) => {
     </footer>
     <script src="lab6.js"></script>
 </body>
-</html>`);
+</html>
+`
 
-        response.end();
-
-    } 
-    
-    else if(request.url == "/equipo") { 
-        response.write(`<div class="columns">
-        <div class="column">
-            <figure class="image">
-                <img class="is-rounded" src="https://http2.mlstatic.com/D_NQ_NP_958731-MLA48578386701_122021-O.webp">
-            </figure>
-        </div>
-        <div class="column">
-            <figure class="image">
-                <img class="is-rounded" src="https://http2.mlstatic.com/D_Q_NP_655478-MLA48578011679_122021-O.webp">
-            </figure>
-        </div>
-        <div class="column">
-            <figure class="image">
-                <img class="is-rounded" src="https://http2.mlstatic.com/D_NQ_NP_953046-CBT68938758100_042023-O.webp">
-            </figure>
-        </div>
-        <button id="boton_imagen" class="button is-info is-rounded">Info Equipo</button>
-
-
-        <div id="equipo"></div>
-    </section>
-    <section id="cajaNombre">
-    <div>`)
-    }
-    
-    
-
-    else if(request.url == "/ola" && request.method == "GET") {
-        
-        response.write(404);
-
-        response.end();
-
-    }
-
-    /*
-    const datos = [];
-
-    request.on('data', (dato) => {
-        console.log(dato);
-        datos.push(dato);
-    });
-
-    return request.on('end', () => {
-        const datos_completos = Buffer.concat(datos).toString();
-        console.log(datos_completos);
-        const nuevo_dato = datos_completos.split('=')[1];
-        return response.end();
-    });
-    */
+response.send(html);
 });
-
-server.listen(3000);

@@ -1,42 +1,4 @@
-/*console.log("hola desde node!");
-
-//fs es el módulo de filesystem de node, 
-//que sirve para acceder a los métodos para manipular el sistema de archivos
-const filesystem = require('fs');
-
-//writeFileSync es un método que sirve para escribir en un archivo de manera síncrona.
-//Por default, los métodos de node son asíncronos.
-filesystem.writeFileSync('hola.txt', 'Hola desde node');
-
-console.log("Ya acabé de escribir el archivo");
-
-//Imprime a los 7 segundos un mensaje
-setTimeout( () => { 
-        console.log("Ya te hackié jojojo"); 
-    }, 7000);
-
-//El siguiente código imprime de manera asíncrona el arreglo ordenado
-const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
-
-for (let item of arreglo) {
-    setTimeout(() => {
-        console.log(item);
-    }, item);
-} 
-
-//El módulo http contiene las funciones para 
-//recibir peticiones HTTP y enviar respuestas de HTTP
-const http = require('http');
-*/
-
-const server = http.createServer( (request, response) => {    
-    console.log(request.url);
-
-    if (request.url == "/") {
-
-        response.setHeader('Content-Type', 'text/html');
-        response.write(`
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
@@ -183,63 +145,9 @@ const server = http.createServer( (request, response) => {
     </footer>
     <script src="lab6.js"></script>
 </body>
-</html>`);
-
-        response.end();
-
-    } 
-    
-    else if(request.url == "/equipo") { 
-        response.write(`<div class="columns">
-        <div class="column">
-            <figure class="image">
-                <img class="is-rounded" src="https://http2.mlstatic.com/D_NQ_NP_958731-MLA48578386701_122021-O.webp">
-            </figure>
-        </div>
-        <div class="column">
-            <figure class="image">
-                <img class="is-rounded" src="https://http2.mlstatic.com/D_Q_NP_655478-MLA48578011679_122021-O.webp">
-            </figure>
-        </div>
-        <div class="column">
-            <figure class="image">
-                <img class="is-rounded" src="https://http2.mlstatic.com/D_NQ_NP_953046-CBT68938758100_042023-O.webp">
-            </figure>
-        </div>
-        <button id="boton_imagen" class="button is-info is-rounded">Info Equipo</button>
+</html>
 
 
-        <div id="equipo"></div>
-    </section>
-    <section id="cajaNombre">
-    <div>`)
-    }
-    
-    
 
-    else if(request.url == "/ola" && request.method == "GET") {
-        
-        response.write(404);
-
-        response.end();
-
-    }
-
-    /*
-    const datos = [];
-
-    request.on('data', (dato) => {
-        console.log(dato);
-        datos.push(dato);
-    });
-
-    return request.on('end', () => {
-        const datos_completos = Buffer.concat(datos).toString();
-        console.log(datos_completos);
-        const nuevo_dato = datos_completos.split('=')[1];
-        return response.end();
-    });
-    */
-});
-
-server.listen(3000);
+<!---Links de referencia-->
+<!---https://blog.hubspot.es/website/como-poner-imagen-en-html#:~:text=Si%20deseas%20establecer%20una%20imagen,en%20versiones%20anteriores%20de%20HTML.-->
