@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"> <!-- Configura la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Configura la vista en dispositivos móviles -->
+    <title>Laboratorio 6</title> <!-- Establece el título de la página -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> <!-- Enlaza la hoja de estilo de Bulma -->
+    <link rel="stylesheet" type="text/css" href="lab12.css"> <!-- Enlaza una hoja de estilo personalizada -->
+</head>
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://bulma.io">
+                    <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="title my-title">Laboratorio 6: Orientado a Eventos</h1>
+                <p class="subtitle my-subtitle">Arturo Sánchez Rodríguez - A01275427</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h2 class="title my-title">Aprendizajes</h2>
+                <ul class="buttons">
+                    <li><button class="button is-primary">HTML</button></li>
+                    <li><button class="button is-primary">JavaScript</button></li>
+                    <li><button class="button is-primary">Git</button></li>
+                    <li><button class="button is-primary">Terminal</button></li>
+                </ul>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h3 class="title my-title">Datos Personales</h3>
+                <table class="table">
+                    <caption>Datos Personales</caption>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Edad</th>
+                            <th>Carrera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Arturo</td>
+                            <td>27/08/2002</td>
+                            <td>20</td>
+                            <td>ITC</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- A partir de aquí comienza la sección de validación de contraseñas -->
+        <!-- Configura la vista en dispositivos móviles y establece el título de la página -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Contraseñas Válidas?</title>
+
+<!-- Estilos CSS para dar formato a la página -->
+<style>
+    /* Estilos para el cuerpo de la página */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: grey;
+        text-align: center;
+    }
+
+    /* Estilos para el contenedor principal */
+    .contenedor {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: yellow;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilos para el título principal */
+    h1 {
+        font-size: 240px;
+        margin-bottom: 200px;
+    }
+
+    /* Estilos para las etiquetas */
+    etiqueta {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    /* Estilos para los campos de contraseña */
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid red;
+        border-radius: 3px;
+    }
+
+    /* Estilos para el mensaje de validación */
+    #mensaje {
+        display: none;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 3px;
+    }
+
+    /* Estilos para mensajes de contraseña válida */
+    .valido {
+        color: green;
+    }
+
+    /* Estilos para mensajes de contraseña inválida */
+    .invalido {
+        color: red;
+    }
+</style>
+
+<!-- Contenedor principal para el validador de contraseñas -->
+<div class="contenedor">
+    <h4>Validador de Contraseñas</h4>
+
+    <!-- Etiqueta y campo de entrada para la contraseña -->
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" placeholder="Ingrese su contraseña">
+
+    <!-- Etiqueta y campo de entrada para confirmar la contraseña -->
+    <label for="confirmarContrasena">Verificar Contraseña:</label>
+    <input type="password" id="confirmarContrasena" placeholder="Confirme su contraseña">
+
+    <!-- Div para mostrar mensajes de validación -->
+    <div id="mensaje"></div>
+</div>
+
+<!-- Script JavaScript para validar contraseñas en tiempo real -->
+<script>
+    // Obtiene referencias a los elementos HTML
+    const contrasenaInput = document.getElementById('contrasena');
+    const confirmarContrasenaInput = document.getElementById('confirmarContrasena');
+    const mensajeDiv = document.getElementById('mensaje');
+
+    // Función para validar contraseñas
+    function validarContrasena() {
+        const contrasena = contrasenaInput.value;
+        const confirmarContrasena = confirmarContrasenaInput.value;
+
+        if (contrasena === confirmarContrasena && contrasena.length >= 8) {
+            // Contraseña válida: muestra un mensaje verde
+            mensajeDiv.innerHTML = 'Contraseña válida';
+            mensajeDiv.classList.remove('invalido');
+            mensajeDiv.classList.add('valido');
+        } else {
+            // Contraseña inválida: muestra un mensaje rojo
+            mensajeDiv.innerHTML = 'Las contraseñas no coinciden o no cumplen con los requisitos (mínimo 8 caracteres)';
+            mensajeDiv.classList.remove('valido');
+            mensajeDiv.classList.add('invalido');
+        }
+
+        // Muestra el mensaje de validación
+        mensajeDiv.style.display = 'block';
+    }
+
+    // Escucha los eventos "keyup" en los campos de contraseña y llama a la función validarContrasena()
+    contrasenaInput.addEventListener('keyup', validarContrasena);
+    confirmarContrasenaInput.addEventListener('keyup', validarContrasena);
+</script>
+
+    </main>
+</body>
+</html>
