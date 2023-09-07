@@ -3,9 +3,11 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
-const router = express.Router();
+app.use(bodyParser.urlencoded({extended: false}));
 
-const path = require('path');
+app.use('/', (request, response, next) => {
+    console.log(request.body);
+});
 
 app.use(bodyParser.urlencoded({extended: false}));
 let equipo = [
@@ -51,7 +53,7 @@ app.get('/',(request, response, next) => {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laboratorios</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="lab6.css">
+    <link rel="stylesheet" href="lab11.css">
 </head>
 <body>
     <header>
@@ -189,7 +191,7 @@ app.get('/',(request, response, next) => {
             <h4 class="title is-5">Referencias</h4>
         </div>
     </footer>
-    <script src="lab6.js"></script>
+    <script src="lab11.js"></script>
 </body>
 </html>
 `;
@@ -262,5 +264,3 @@ app.use((request, response, next) => {
 });
 
 app.listen(3000);
-
-module.exports = router;
