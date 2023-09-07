@@ -4,12 +4,6 @@ const app = express();
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
-
-app.use('/', (request, response, next) => {
-    console.log(request.body);
-});
-
-app.use(bodyParser.urlencoded({extended: false}));
 let equipo = [
     {
         agarre:"Anatomico",
@@ -53,7 +47,7 @@ app.get('/',(request, response, next) => {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laboratorios</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="lab11.css">
+    <link rel="stylesheet" href="lab6.css">
 </head>
 <body>
     <header>
@@ -191,7 +185,7 @@ app.get('/',(request, response, next) => {
             <h4 class="title is-5">Referencias</h4>
         </div>
     </footer>
-    <script src="lab11.js"></script>
+    <script src="lab6.js"></script>
 </body>
 </html>
 `;
