@@ -4,6 +4,12 @@ const app = express();
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.use('/', (request, response, next) => {
+    console.log(request.body);
+});
+
+app.use(bodyParser.urlencoded({extended: false}));
 let equipo = [
     {
         agarre:"Anatomico",
