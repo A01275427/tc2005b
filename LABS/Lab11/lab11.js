@@ -21,24 +21,36 @@ let equipo = [
         descripcion:"Se adaptan a la mano en forma por por lo que están aconsejados para personas con manos grandes a las que les gusta sentir que usan toda la superficie de la pala."
     }
 ]
-equipo.push({
-    agarre: request.body.agarre,
-    imagen: "https://http2.mlstatic.com/D_NQ_NP_958731-MLA48578386701_122021-O.webp",
-    descripcion: request.body.descripcion,
-})
+
+app.post('/', (request, response, next) => {
+    const agarre = request.body.agarre;
+    const descripcion = request.body.descripcion;
+
+    // Añadir los datos al arreglo equipo
+    equipo.push({
+        agarre: agarre,
+        imagen: "https://http2.mlstatic.com/D_NQ_NP_958731-MLA48578386701_122021-O.webp",
+        descripcion: descripcion,
+    });
+
+    // Enviar una respuesta si es necesario
+    response.send('Datos agregados correctamente');
+});
+
 
 app.use((request, response, next) => {
     console.log('Middleware');
     next();//Le permite a la petición avanzar hacia el siguiente middleware
 });
 
+/*
 app.use((request, response, next) => {
     console.log('Otro middleware!');
     response.send('¡Hola mundo!'); //Manda la respuesta
 });
+*/
 
-
-app.get('/',(request, response, next) => {
+app.use('/',(request, response, next) => {
     const html =` 
     <!DOCTYPE html>
 <html lang="es">
@@ -238,17 +250,11 @@ app.get('/ola', (request, response, next) => {
         </div>
     </section>
 </main>
+
 `
     response.send();
 })
 
-app.post('/new', (request, response, next) => {
-
-    console.log(request.body);
-
-    response.redirect('/');
-
-});
 
 app.use((request, response, next) => {
     console.log('Otro middleware!');
