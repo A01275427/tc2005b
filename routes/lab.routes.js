@@ -1,4 +1,63 @@
-<!DOCTYPE html>
+const express = require('express');
+const router = express.Router();
+const path = require('path');
+
+let moto = [
+    {
+        nombre:"Enduro",
+        imagen:"https://cdn05.zipify.com/AjYhTwQQbjYOyVeVbMTAsqEMVck=/fit-in/1030x0/adf540beb8b94502855eb58f2bc300c2/104352_fe-250-2023.jpeg",
+        descripcion:"El enduro es una carrera en motocicleta o bicicleta en la que básicamente se deben superar obstáculos logrando el mejor tiempo posible y teniendo la mejor pericia sobre el vehículo."
+    },
+    {
+        nombre:"Cross",
+        imagen:"https://cdn05.zipify.com/bm6SD-f3RQ27x_vMame8Ye_zyok=/fit-in/1030x0/9c129927277041ec80880ba23798550a/434070_125-sx-my23-90-right_my23_01-studio.jpeg",
+        descripcion:"Motocross. A menos que se homologuen y matriculen, las motos de motocross tampoco están autorizadas a circular públicamente. Ligeras y muy manejables, cuentan con motores de 2 y 4 tiempos, suspensiones blandas y neumáticos con tacos para maximizar el agarre y ofrecer una mayor seguridad."
+    },
+    {
+        nombre:"Doble Proposito",
+        imagen:"https://i5.walmartimages.com.mx/mg/gm/3pp/asr/4107d3c9-30ef-4b73-8fec-fb0dab37d735.d825a96f3c2b2d6882efa602deeb8f68.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+        descripcion:"Las motos doble propósito, conocidas también como Trail, BigTrail o Adventure, son motocicletas que tienen la capacidad de funcionar en diversos caminos, pistas, carreteras pavimentadas o no. Están diseñadas para competir en prácticas donde las motos se destacan por su polivalencia."
+    }
+]
+
+/*
+app.post('/', (request, response, next) => {
+    const agarre = request.body.agarre;
+    const descripcion = request.body.descripcion;
+
+    // Añadir los datos al arreglo equipo
+    equipo.push({
+        agarre: agarre,
+        imagen: "https://http2.mlstatic.com/D_NQ_NP_958731-MLA48578386701_122021-O.webp",
+        descripcion: descripcion,
+    });
+
+    // Enviar una respuesta si es necesario
+    response.send('Datos agregados correctamente');
+});
+*/
+
+router.get('/cross', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'cross.html'));
+});
+
+router.get('/doble', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'doble.html'));
+});
+
+router.get('/tienda', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'tienda.html'));
+});
+
+router.get('/enduro', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'enduro.html'));
+});
+
+module.exports = router;
+
+router.get('/',(request, response, next) => {
+    const html =` 
+    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
@@ -13,7 +72,7 @@
             <div class="navbar-brand">
                 <a class="navbar-item" href="#">
                     <figure class="image is 20x20">
-                        <img src="https://o.remove.bg/downloads/ed17a291-158f-49be-8c29-ff382ec51cc5/cascooo-removebg-preview.png" alt="Motocross" width="95" height="200">
+                        <img src="https://w7.pngwing.com/pngs/864/664/png-transparent-fox-logo-fox-racing-logo-desktop-blue-motocross-blue-angle-white-thumbnail.png" alt="Motocross" width="95" height="200">
                     </figure>
                 </a>
                 <section class="section">
@@ -145,11 +204,21 @@
             <h4 class="title is-5">Referencias</h4>
         </div>
     </footer>
-    <script src="lab11.js"></script>
+    <script src="lab.js"></script>
 </body>
 </html>
+`;
+    
+    response.send(html);
+});
 
 
 
-<!---Links de referencia-->
-<!---https://blog.hubspot.es/website/como-poner-imagen-en-html#:~:text=Si%20deseas%20establecer%20una%20imagen,en%20versiones%20anteriores%20de%20HTML.-->
+
+app.use((request, response, next) => {
+    response.statusCode = 404;
+    response.send('Es película es muuuy independiente'); //Manda la respuesta
+
+});
+
+app.listen(3000);
