@@ -22,7 +22,7 @@ app.use((request, response, next) => {
     next();
 });
 
-const rutamoto = require('../routes/motos.routes');
+const rutamoto = require('./routes/motos.routes');
 
 app.use('/', rutamoto);
 
