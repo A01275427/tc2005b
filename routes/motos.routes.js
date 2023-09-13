@@ -37,23 +37,23 @@ router.post('/ingresa', (req, res) => {
 
 
 router.get('/dobleprop', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views','html', 'doble.html'));
+    response.sendFile(path.join(__dirname, '..', 'views', 'doble.html'));
 });
 
 router.get('/enduro', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'html', 'enduro.html'));
+    response.sendFile(path.join(__dirname, '..', 'views', 'enduro.html'));
 });
 
 router.get('/tienda', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views','html', 'tienda.html'));
+    response.sendFile(path.join(__dirname, '..', 'views', 'tienda.html'));
 });
 
 router.get('/cross', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'html', 'cross.html'));
+    response.sendFile(path.join(__dirname, '..', 'views', 'cross.html'));
 });
 
 router.get('/', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views','html', 'lab.html'));
+    response.sendFile(path.join(__dirname, '..', 'views', 'lab.html'));
 });
 
 
