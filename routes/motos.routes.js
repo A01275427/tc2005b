@@ -56,6 +56,10 @@ router.get('/', (request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'lab.html'));
 });
 
+router.get('/', (request, response, next) => {
+    const titulo = "El Camino Motocicletas";
+    response.render('lab', { variable: variable });
+});
 
 
 router.post('/dobleprop', (request, response, next) => {

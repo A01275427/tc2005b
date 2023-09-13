@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laboratorio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="lab.css">
-</head>
+<%- include('includes/head.ejs') %>
 <body>
     <header>
         <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
@@ -18,7 +10,7 @@
                 </a>
                 <section class="section">
                     <div class="container">
-                        <h1 class="title is-5", style="color:white"> El Camino Motocicletas</h1>
+                        <h1><%= titulo %></h1>
                     </div>
                 </section>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -167,11 +159,4 @@
                 </div>
         </section>
     </main>
-    <footer class="section">
-        <div class="container">
-            <h4 class="title is-5">Referencias</h4>
-        </div>
-    </footer>
-    <script src="lab.js"></script>
-</body>
-</html>
+    <%- include('includes/foot.ejs') %>
