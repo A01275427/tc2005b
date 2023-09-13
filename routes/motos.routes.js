@@ -23,7 +23,7 @@ let moto = [
 ];
 
 
-router.post('/submit-form', (req, res) => {
+router.post('/ingresa', (req, res) => {
     const nombre = req.body.nombre;    
     fs.appendFile('datos.txt', `Nombre: ${nombre}\n`, err => {
         if (err) {
@@ -35,9 +35,28 @@ router.post('/submit-form', (req, res) => {
 });
 
 
+
 router.get('/dobleprop', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'doble.html'));
+    response.sendFile(path.join(__dirname, '..', 'views','html', 'doble.html'));
 });
+
+router.get('/enduro', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'html', 'enduro.html'));
+});
+
+router.get('/tienda', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views','html', 'tienda.html'));
+});
+
+router.get('/cross', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'html', 'cross.html'));
+});
+
+router.get('/', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views','html', 'lab.html'));
+});
+
+
 
 router.post('/dobleprop', (request, response, next) => {
     console.log(request.body);
@@ -58,6 +77,8 @@ router.get('/enduro', (request, response, next) => {
 });
 
 
+
+/*
 router.use('/cross', (request, response, next) => {
     const html = `
     <!DOCTYPE html>
@@ -282,7 +303,7 @@ router.use('/',(request, response, next) => {
     
     response.send(html);
 });
-
+*/
 module.exports = router;
 
 
@@ -290,5 +311,5 @@ module.exports = router;
 router.get('/', (request, response) => {
     // Define your route logic here
     res.send('This is the /enduro route');
-  });
+});
 */
