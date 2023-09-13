@@ -1,12 +1,33 @@
 const express = require('express');
-
 const app = express();
-
 const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
 
-//const router = require('./router'); 
+app.use((request, response, next) => {
+    console.log('Middleware');
+    next();
+});
+
+const rutamoto = require('../routes/lab.routes');
+
+app.use('/', rutamoto);
+
+app.use((request, response, next) => {
+    console.log('Otro middleware!');
+    response.statusCode = 404;
+    response.send('Página no encontrada');
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
 
 
+
+/*
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use((request, response, next) => {
@@ -15,16 +36,9 @@ app.use((request, response, next) => {
 });
 
 
-app.post((request, response, next) => {
-    response.statusCode = 404;
-    response.send('Es película es muuuy independiente'); //Manda la respuesta
+const rutamoto = require('../routes/lab.routes');
 
-});
-
-
-const rutamoto = require('../routes/lab.routesa');
-
-//app.use('/enduro', rutamoto);
+app.use('/enduro', rutamoto);
 
 
 
@@ -34,3 +48,4 @@ app.use((request, response, next) => {
     response.send('Es película es muuuy independiente'); //Manda la respuesta
 
 });
+*/

@@ -22,83 +22,22 @@ let moto = [
 
 
 router.get('/dobleprop', (request, response, next) => {
-    const html =`
-    <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            DOBLE PROPOSITO
-        </title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laboratorios</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="doble.css">
-    </head>
-    <body>
-        <header>
-            <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="#">
-                        <figure class="image is 20x20">
-                            <img src="https://w7.pngwing.com/pngs/864/664/png-transparent-fox-logo-fox-racing-logo-desktop-blue-motocross-blue-angle-white-thumbnail.png" alt="Motocross" width="95" height="200">
-                        </figure>
-                    </a>
-                    <section class="section">
-                        <div class="container">
-                            <h1 class="title is-5", style="color:white">DOBLE PROPOSITO</h1>
-                        </div>
-                    </section>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <section class="section">
-                <div class="container">
-                    <h2 class="title is-4", style="color:white">Informacion General</h2>
-                    <ul class="buttons">
-                        <li><button class="button is-transparent">Torneos</button></li>
-                        <li><button class="button is-transparent">Categoria</button></li>
-                        <li><button class="button is-transparent">Reglas</button></li>
-                        <li><button class="button is-transparent">Equipo</button></li>
-                    </ul>
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="columns">
-                <div class="column">
-                    <figure class="image">
-                        <img src="https://www.proyectar.com.mx/i/himalayan_g1.jpg">
-                    </figure>
-                </div>
-                <button id="boton_imagen" class="button is-info is-rounded">Info Eventos</button>
-                <div id="equipo"></div>
-            </section>
-            
-        </main>
-    </body>
-</html>
-    `
+    response.sendFile(path.join(__dirname, '..', 'views', 'doble.html'));
 });
 
 router.post('/dobleprop', (request, response, next) => {
-
     console.log(request.body);
-
     moto.push({
-
         nombre: request.body.nombre,
-
         imagen: "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/4107d3c9-30ef-4b73-8fec-fb0dab37d735.d825a96f3c2b2d6882efa602deeb8f68.png?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
-
         descripcion: request.body.descripcion,
-
     });
 
     response.redirect('/Lab');
 
 });
+
+
 
 router.use('/enduro', (request, response, next) => {
     const html = `
@@ -159,6 +98,7 @@ router.use('/enduro', (request, response, next) => {
     </body>
 </html>
     `
+    response.send(html); // Send the HTML as a response
 });
 
 router.use('/cross', (request, response, next) => {
@@ -220,6 +160,7 @@ router.use('/cross', (request, response, next) => {
     </body>
 </html>
     ` 
+    response.send('html')
 });
 
 router.use('/',(request, response, next) => {
@@ -384,3 +325,13 @@ router.use('/',(request, response, next) => {
     
     response.send(html);
 });
+
+module.exports = router;
+
+
+/*
+router.get('/', (request, response) => {
+    // Define your route logic here
+    res.send('This is the /enduro route');
+  });
+*/
