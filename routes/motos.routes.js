@@ -54,7 +54,7 @@ router.post('/dobleprop', (request, response, next) => {
 
 
 router.get('/enduro', (request, response, next) => {
-    response.render('moto/list');
+    response.render('list');
 });
 
 
