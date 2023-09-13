@@ -1,40 +1,9 @@
-<%- include('./includes/head.ejs') %>
-            <h1 class="title">ENDURO</h1>
-                <div class="columns">
-                    <% if (motos.length > 0) { %>
-                        <% for(let moto of motos) { %>
-                            <div class="column">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <figure class="image is-4by3">
-                                            <img src="<%= moto.imagen %>" alt="<%= moto.nombre %>">
-                                        </figure>
-                                    </div>
-                                    <div class="card-content">
-                                        <div class="media">
-                                            <div class="media-left">
-                                                <figure class="image is-48x48">
-                                                    <img src="<%= moto.imagen %>" alt="<%= moto.nombre %>">
-                                                </figure>
-                                            </div>
-                                            <div class="media-content">
-                                                <p class="title is-4"><%= moto.nombre %></p>
-                                            </div>
-                                        </div>
-                                        <div class="content">
-                                            <%= moto.descripcion %>
-                                            <br>
-                                            <button class="button is-danger is-rounded" onclick="quitar('<%= moto.nombre %>')">Quitar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <% } %>
-                    <% } else { %>
-                        <h2>No hay motos registradas.</h2>
-                    <% } %>
-                </div>
-            </div>
-        </section>
-    </main>
-
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/navbar.ejs') %>
+    
+    <h1>Bienvenido a mi sitio web</h1>
+    
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>
