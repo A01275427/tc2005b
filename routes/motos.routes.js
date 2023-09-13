@@ -40,65 +40,9 @@ router.post('/dobleprop', (request, response, next) => {
 
 
 router.use('/enduro', (request, response, next) => {
-    const html = `
-    <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            ENDURO
-        </title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laboratorios</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="enduro.css">
-    </head>
-    <body>
-        <header>
-            <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="#">
-                        <figure class="image is 20x20">
-                            <img src="https://w7.pngwing.com/pngs/864/664/png-transparent-fox-logo-fox-racing-logo-desktop-blue-motocross-blue-angle-white-thumbnail.png" alt="Motocross" width="95" height="200">
-                        </figure>
-                    </a>
-                    <section class="section">
-                        <div class="container">
-                            <h1 class="title is-5">ENDURO</h1>
-                        </div>
-                    </section>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <section class="section">
-                <div class="container">
-                    <h2 class="title is-4">Informacion General</h2>
-                    <ul class="buttons">
-                        <li><button class="button is-transparent">Torneos</button></li>
-                        <li><button class="button is-transparent">Categoria</button></li>
-                        <li><button class="button is-transparent">Reglas</button></li>
-                        <li><button class="button is-transparent">Equipo</button></li>
-                    </ul>
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="columns">
-                <div class="column">
-                    <figure class="image">
-                        <img src="https://aprende.com/wp-content/uploads/2020/07/tipo-de-moto-enduro-caracteristicas_opt-940x529.jpg">
-                    </figure>
-                </div>
-                <button id="boton_imagen" class="button is-info is-rounded">Info Eventos</button>
-                <div id="equipo"></div>
-            </section>
-            
-        </main>
-    </body>
-</html>
-    `
-    response.send(html); // Send the HTML as a response
+            response.render('peliculas/list.ejs', {
+            peliculas: peliculas
+        });
 });
 
 router.use('/cross', (request, response, next) => {
