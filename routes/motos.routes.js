@@ -54,8 +54,8 @@ router.post('/dobleprop', (request, response, next) => {
 
 
 router.use('/enduro', (request, response, next) => {
-            response.render('peliculas/list.ejs', {
-            peliculas: peliculas
+            response.render('motos/list.ejs', {
+            motos: moto
         });
 });
 
