@@ -9,10 +9,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const bodyParser = require('body-parser');
 
-app.set('view engine', 'ejs');
-app.set('view', 'views');
-
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 

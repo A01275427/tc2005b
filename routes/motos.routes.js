@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const fs = require('fs');
 
 let moto = [
 
@@ -20,6 +21,18 @@ let moto = [
         descripcion: "Las motos doble propósito, conocidas también como Trail, BigTrail o Adventure, son motocicletas que tienen la capacidad de funcionar en diversos caminos, pistas, carreteras pavimentadas o no. Están diseñadas para competir en prácticas donde las motos se destacan por su polivalencia."
     },
 ];
+
+
+router.post('/submit-form', (req, res) => {
+    const nombre = req.body.nombre;    
+    fs.appendFile('datos.txt', `Nombre: ${nombre}\n`, err => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Ocurrió un error al guardar los datos');
+        }        
+        res.send('Datos recibidos y guardados');
+    });
+});
 
 
 router.get('/dobleprop', (request, response, next) => {
