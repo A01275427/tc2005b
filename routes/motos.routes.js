@@ -53,11 +53,10 @@ router.post('/dobleprop', (request, response, next) => {
 
 
 
-router.use('/enduro', (request, response, next) => {
-            response.render('motos/list.ejs', {
-            motos: moto
-        });
+router.get('/enduro', (request, response, next) => {
+    response.render('moto/list');
 });
+
 
 router.use('/cross', (request, response, next) => {
     const html = `
