@@ -17,7 +17,7 @@ app.listen(3000, () => {
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Para acceder a los recursos de la carpeta public
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public', 'css')));
 
 app.use((request, response, next) => {
     console.log('Middleware');
