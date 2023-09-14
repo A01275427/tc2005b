@@ -4,9 +4,12 @@ const fs = require('fs');
 const path = require('path'); 
 const aController = require('../controllers/a_controller');
 
+const motosController = require('../controllers/motos.controller');
 
 router.get('/add', aController.action);
+router.post('/add', motosController.post_add);
 
+/*
 router.get('/dobleprop', (request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'doble.html'));
 });
@@ -39,11 +42,13 @@ router.post('/ingresa', (req, res) => {
     });
 });
 
+router.get('/add', aController.action);
 router.post('/add', motosController.post_add);
 
 router.get('/list', motosController.get_list);
 
 router.get('/', motosController.get_list);
+*/
 
 module.exports = router; 
 
@@ -334,7 +339,7 @@ router.use('/',(request, response, next) => {
     response.send(html);
 });
 */
-module.exports = router;
+
 
 
 /*

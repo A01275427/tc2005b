@@ -1,3 +1,4 @@
+/*
 let moto = [
 
     {
@@ -16,8 +17,23 @@ let moto = [
         descripcion: "Las motos doble propósito, conocidas también como Trail, BigTrail o Adventure, son motocicletas que tienen la capacidad de funcionar en diversos caminos, pistas, carreteras pavimentadas o no. Están diseñadas para competir en prácticas donde las motos se destacan por su polivalencia."
     },
 ];
+*/
 
+const Moto = require('../models/moto');
+
+exports.post_add = (req, res, next) => {
+    const newMoto = new Moto(req.body.name, req.body.model, req.body.year);
+    newMoto.save();
+
+    res.redirect('/');
+};
+
+// (otros métodos del controlador, si los hay)
+
+
+/*
 router.get('/add', aController.action);
+
 
 router.get('/dobleprop', (request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'doble.html'));
@@ -66,4 +82,5 @@ router.get('/list', (request, response, next) => {
     response.render('list', { motos: motos }); 
 });
 
-module.exports = router; 
+*/
+

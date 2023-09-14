@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View File</title>
+</head>
+<body>
+    <p>Atributo 1: <%= atribute_1 %></p>
+    <p>Atributo 2: <%= atribute_2 %></p>
+    
+    <% objetos.forEach(objeto => { %>
+        <p>Nombre: <%= objeto.name %>, Modelo: <%= objeto.model %>, Año: <%= objeto.year %></p>
+    <% }); %>
+
+    <form action="/add" method="POST">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="model">Modelo:</label>
+        <input type="text" id="model" name="model">
+        
+        <label for="year">Año:</label>
+        <input type="number" id="year" name="year">
+        
+        <button type="submit">Agregar Moto</button>
+    </form>
+</body>
+</html>
