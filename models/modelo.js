@@ -1,16 +1,17 @@
 class Modelo {
     constructor(my_value) {
-    this.attribute_1 = my_value;
+        this.attribute_1 = my_value;
     }
 
+    static objetos = [];
+
     save() {
-    objetos.push(this);
+        Modelo.objetos.push(this);
     }
 
     static fetchAll() {
-    return objetos;
+        return Modelo.objetos;
     }
 }
 
-const objetos = [];
 module.exports = Modelo;
